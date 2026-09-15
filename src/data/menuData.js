@@ -3,13 +3,13 @@
 // ============================================
 
 export const CATEGORIES = [
-  { id: 'all',       label: 'All Items',      icon: '🍽️' },
-  { id: 'pork-rolls',label: 'Crispy Pork Rolls', icon: '🥖' },
-  { id: 'meat-boxes',label: 'Meat Boxes',     icon: '📦' },
-  { id: 'rice-bowls',label: 'Rice Bowls',     icon: '🍚' },
-  { id: 'salad-bowls',label: 'Salad Bowls',   icon: '🥗' },
-  { id: 'sides',     label: 'Sides & Extras', icon: '🍟' },
-  { id: 'drinks',    label: 'Drinks',         icon: '🥤' },
+  { id: 'all',       label: 'All Items' },
+  { id: 'pork-rolls',label: 'Crispy Pork Rolls' },
+  { id: 'meat-boxes',label: 'Meat Boxes' },
+  { id: 'rice-bowls',label: 'Rice Bowls' },
+  { id: 'salad-bowls',label: 'Salad Bowls' },
+  { id: 'sides',     label: 'Sides & Extras' },
+  { id: 'drinks',    label: 'Drinks' },
 ]
 
 export const MENU_ITEMS = [

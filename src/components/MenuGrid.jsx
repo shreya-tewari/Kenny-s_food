@@ -124,7 +124,6 @@ export default function MenuGrid() {
               aria-pressed={activeCategory === cat.id}
               aria-label={`Filter by ${cat.label}`}
             >
-              <span style={{ marginRight: '4px' }}>{cat.icon}</span>
               {cat.label}
             </button>
           ))}

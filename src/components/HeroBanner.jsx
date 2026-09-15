@@ -14,10 +14,10 @@ const FLOATERS = [
 ]
 
 const BOTTOM_STATS = [
-  { icon: '🔥', label: 'SLOW ROASTED',    sub: 'For maximum flavour'   },
-  { icon: '🐷', label: '100% AUSSIE PORK', sub: 'Ethically sourced'     },
-  { icon: '✅', label: 'NO NASTIES',       sub: 'Just real ingredients' },
-  { icon: '📍', label: 'MADE FRESH DAILY', sub: 'In select locations'   },
+  { label: 'SLOW ROASTED', sub: 'For maximum flavour' },
+  { label: '100% AUSSIE PORK', sub: 'Ethically sourced' },
+  { label: 'NO NASTIES', sub: 'Just real ingredients' },
+  { label: 'MADE FRESH DAILY', sub: 'In select locations' },
 ]
 
 const STEAM = Array.from({ length: 7 }, (_, i) => ({
@@ -366,19 +366,16 @@ export default function HeroBanner() {
             <div key={stat.label} style={{
               flex: 1,
               display: 'flex',
-              alignItems: 'center',
-              gap: '10px',
+              flexDirection: 'column',
+              justifyContent: 'center',
               padding: '0 clamp(8px,2vw,24px)',
               borderRight: i < BOTTOM_STATS.length - 1 ? '1px solid rgba(255,255,255,0.07)' : 'none',
             }}>
-              <span style={{ fontSize: '20px', opacity: 0.85, flexShrink: 0 }}>{stat.icon}</span>
-              <div>
-                <div style={{ fontSize: '10px', fontWeight: 800, color: '#FFFFFF', letterSpacing: '0.1em', textTransform: 'uppercase', lineHeight: 1.2, whiteSpace: 'nowrap' }}>
-                  {stat.label}
-                </div>
-                <div style={{ fontSize: '10px', color: 'rgba(255,255,255,0.38)', marginTop: '2px', whiteSpace: 'nowrap' }}>
-                  {stat.sub}
-                </div>
+              <div style={{ fontSize: '11px', fontWeight: 800, color: '#FFFFFF', letterSpacing: '0.1em', textTransform: 'uppercase', lineHeight: 1.2, whiteSpace: 'nowrap' }}>
+                {stat.label}
+              </div>
+              <div style={{ fontSize: '10px', color: 'rgba(255,255,255,0.38)', marginTop: '2px', whiteSpace: 'nowrap' }}>
+                {stat.sub}
               </div>
             </div>
           ))}
