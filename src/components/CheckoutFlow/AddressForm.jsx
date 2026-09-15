@@ -119,7 +119,7 @@ export default function AddressForm({ data, onChange, onNext, onBack }) {
               id="street"
               type="text"
               className={`form-input ${errors.street ? 'error' : ''}`}
-              placeholder="e.g. 42 George Street"
+              placeholder="e.g. 159 Oxford Street"
               value={form.street}
               onChange={e => updateForm('street', e.target.value)}
             />

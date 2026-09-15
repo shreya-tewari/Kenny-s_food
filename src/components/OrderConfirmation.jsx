@@ -157,7 +157,7 @@ export default function OrderConfirmation() {
             <div className="card-body">
               <MapPin size={28} color="var(--color-gold)" style={{ margin: '0 auto 10px' }} />
               <div style={{ fontWeight: 700, fontSize: '14px', color: 'var(--color-charcoal)' }}>
-                {isPickup ? '42 George St, Sydney' : (state?.address?.street || 'Your address')}
+                {isPickup ? '159 Oxford St, Darlinghurst' : (state?.address?.street || 'Your address')}
               </div>
               <div style={{ fontSize: '13px', color: 'var(--color-sage)' }}>
                 {isPickup ? 'Pickup location' : 'Delivery address'}
@@ -206,8 +206,8 @@ export default function OrderConfirmation() {
           <div style={{ textAlign: 'center', paddingTop: '8px' }}>
             <span style={{ fontSize: '13px', color: 'var(--color-sage)' }}>
               Questions? {' '}
-              <a href="tel:0290000000" style={{ color: 'var(--color-gold)', fontWeight: 600 }}>
-                Call us on (02) 9000 0000
+              <a href="tel:0280408004" style={{ color: 'var(--color-gold)', fontWeight: 600 }}>
+                Call us on (02) 8040 8004
               </a>
             </span>
           </div>

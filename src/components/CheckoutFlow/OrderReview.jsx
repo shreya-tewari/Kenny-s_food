@@ -88,7 +88,7 @@ export default function OrderReview({ checkoutData, onBack }) {
                 </div>
                 {delivery.type === 'pickup' ? (
                   <div style={{ fontSize: '12px', color: 'var(--color-sage)' }}>
-                    42 George St, Sydney<br />
+                    159 Oxford St, Darlinghurst<br />
                     {delivery.pickupSlot && <span style={{ color: 'var(--color-success)', fontWeight: 600 }}>At {delivery.pickupSlot}</span>}
                   </div>
                 ) : (

@@ -145,7 +145,7 @@ export default function DeliveryPickup({ data, onChange, onNext }) {
               ))}
             </div>
             <div style={{ marginTop: '14px', padding: '10px 12px', background: 'var(--color-success-light)', borderRadius: 'var(--radius-md)', fontSize: '13px', color: 'var(--color-success)', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '6px' }}>
-              📍 42 George Street, Sydney NSW 2000
+              📍 159 Oxford St, Darlinghurst NSW 2010 · (02) 8040 8004
             </div>
           </div>
         </div>
