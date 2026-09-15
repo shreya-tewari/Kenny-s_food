@@ -4,15 +4,6 @@ import { ArrowRight, ChevronDown, Instagram, Facebook } from 'lucide-react'
 
 /* ── Data ─────────────────────────────────────────────────────────────── */
 
-const FLOATERS = [
-  { emoji: '🌶️', x: 63, y: 10, size: 52, rot: -28, dur: 5.5, delay: 0    },
-  { emoji: '🌶️', x: 82, y: 60, size: 40, rot:  22, dur: 6.2, delay: 1.4  },
-  { emoji: '🌶️', x: 70, y: 78, size: 34, rot:  14, dur: 7.0, delay: 2.6  },
-  { emoji: '🌿', x: 57, y:  8, size: 46, rot: -14, dur: 5.8, delay: 0.7  },
-  { emoji: '🌿', x: 90, y: 68, size: 36, rot:  38, dur: 6.8, delay: 2.1  },
-  { emoji: '🌿', x: 62, y: 85, size: 28, rot: -52, dur: 5.2, delay: 1.9  },
-]
-
 const BOTTOM_STATS = [
   { label: 'SLOW ROASTED', sub: 'For maximum flavour' },
   { label: '100% AUSSIE PORK', sub: 'Ethically sourced' },
@@ -46,8 +37,8 @@ export default function HeroBanner() {
   }
 
   const enter = (delay) => ({
-    opacity:    mounted ? 1 : 0,
-    transform:  mounted ? 'translateY(0)' : 'translateY(28px)',
+    opacity: mounted ? 1 : 0,
+    transform: mounted ? 'translateY(0)' : 'translateY(28px)',
     transition: `opacity 0.7s ease ${delay}s, transform 0.7s ease ${delay}s`,
   })
 
@@ -201,7 +192,7 @@ export default function HeroBanner() {
           <div style={{ ...enter(0.48), display: 'flex', alignItems: 'center', gap: '14px', flexWrap: 'wrap' }}>
             {/* Stacked avatars */}
             <div style={{ display: 'flex' }}>
-              {['#C9503A','#5C8A6F','#7BA8C4','#C9A961'].map((bg, i) => (
+              {['#C9503A', '#5C8A6F', '#7BA8C4', '#C9A961'].map((bg, i) => (
                 <div key={i} style={{
                   width: '34px', height: '34px', borderRadius: '50%',
                   border: '2px solid #050505',
@@ -212,7 +203,7 @@ export default function HeroBanner() {
                   zIndex: 4 - i,
                   position: 'relative',
                 }}>
-                  {['A','J','M','L'][i]}
+                  {['A', 'J', 'M', 'L'][i]}
                 </div>
               ))}
             </div>
@@ -274,23 +265,6 @@ export default function HeroBanner() {
               ))}
             </div>
           </div>
-
-          {/* Floating food elements */}
-          {FLOATERS.map((f, i) => (
-            <div key={i} style={{
-              position: 'absolute',
-              left: f.x + '%', top: f.y + '%',
-              fontSize: f.size + 'px',
-              '--rot': f.rot + 'deg',
-              animation: `floatElement ${f.dur}s ease-in-out ${f.delay}s infinite`,
-              pointerEvents: 'none',
-              zIndex: 20,
-              filter: 'drop-shadow(0 6px 12px rgba(0,0,0,0.6))',
-              willChange: 'transform',
-            }}>
-              {f.emoji}
-            </div>
-          ))}
 
           {/* "100% AUSSIE PORK" circular badge */}
           <div style={{
@@ -392,7 +366,7 @@ export default function HeroBanner() {
             FOLLOW US
           </span>
           {[Instagram, Facebook].map((Icon, i) => (
-            <a key={i} href="#" aria-label={['Instagram','Facebook'][i]} style={{
+            <a key={i} href="#" aria-label={['Instagram', 'Facebook'][i]} style={{
               width: '32px', height: '32px', borderRadius: '50%',
               border: '1px solid rgba(255,255,255,0.14)',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -400,16 +374,16 @@ export default function HeroBanner() {
               transition: 'all 0.2s',
               textDecoration: 'none',
             }}
-            onMouseEnter={e => {
-              e.currentTarget.style.borderColor = 'rgba(204,26,26,0.7)'
-              e.currentTarget.style.color = '#CC1A1A'
-              e.currentTarget.style.background = 'rgba(204,26,26,0.1)'
-            }}
-            onMouseLeave={e => {
-              e.currentTarget.style.borderColor = 'rgba(255,255,255,0.14)'
-              e.currentTarget.style.color = 'rgba(255,255,255,0.55)'
-              e.currentTarget.style.background = 'transparent'
-            }}>
+              onMouseEnter={e => {
+                e.currentTarget.style.borderColor = 'rgba(204,26,26,0.7)'
+                e.currentTarget.style.color = '#CC1A1A'
+                e.currentTarget.style.background = 'rgba(204,26,26,0.1)'
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.14)'
+                e.currentTarget.style.color = 'rgba(255,255,255,0.55)'
+                e.currentTarget.style.background = 'transparent'
+              }}>
               <Icon size={14} />
             </a>
           ))}
@@ -423,16 +397,16 @@ export default function HeroBanner() {
             transition: 'all 0.2s',
             textDecoration: 'none',
           }}
-          onMouseEnter={e => {
-            e.currentTarget.style.borderColor = 'rgba(204,26,26,0.7)'
-            e.currentTarget.style.color = '#CC1A1A'
-            e.currentTarget.style.background = 'rgba(204,26,26,0.1)'
-          }}
-          onMouseLeave={e => {
-            e.currentTarget.style.borderColor = 'rgba(255,255,255,0.14)'
-            e.currentTarget.style.color = 'rgba(255,255,255,0.55)'
-            e.currentTarget.style.background = 'transparent'
-          }}>
+            onMouseEnter={e => {
+              e.currentTarget.style.borderColor = 'rgba(204,26,26,0.7)'
+              e.currentTarget.style.color = '#CC1A1A'
+              e.currentTarget.style.background = 'rgba(204,26,26,0.1)'
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.borderColor = 'rgba(255,255,255,0.14)'
+              e.currentTarget.style.color = 'rgba(255,255,255,0.55)'
+              e.currentTarget.style.background = 'transparent'
+            }}>
             ♪
           </a>
         </div>
