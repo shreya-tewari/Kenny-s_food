@@ -1,0 +1,189 @@
+/* ============================================
+   KENNY'S PORK ROLLS — BUTTONS
+   ============================================ */
+
+/* ---- Base Button ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  transition:
+    background var(--transition-base),
+    color var(--transition-base),
+    box-shadow var(--transition-base),
+    transform var(--transition-fast),
+    border-color var(--transition-base);
+  white-space: nowrap;
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+/* ---- Primary Button ---- */
+.btn-primary {
+  background: var(--gradient-cta);
+  color: var(--color-charcoal);
+  box-shadow: var(--shadow-button);
+}
+
+.btn-primary:hover {
+  background: var(--gradient-cta-hover);
+  box-shadow: 0 6px 20px rgba(201, 169, 97, 0.35);
+  transform: translateY(-2px);
+}
+
+/* ---- Primary (Dark) Button — on dark backgrounds ---- */
+.btn-primary-dark {
+  background: var(--gradient-cta);
+  color: var(--color-charcoal);
+  box-shadow: var(--shadow-button);
+}
+
+.btn-primary-dark:hover {
+  background: var(--gradient-cta-hover);
+  box-shadow: 0 6px 20px rgba(201, 169, 97, 0.4);
+  transform: translateY(-2px);
+}
+
+/* ---- Secondary Button ---- */
+.btn-secondary {
+  background: transparent;
+  color: var(--color-charcoal);
+  border: 1.5px solid var(--color-taupe);
+}
+
+.btn-secondary:hover {
+  background: var(--color-cream);
+  border-color: var(--color-gold);
+  transform: translateY(-1px);
+}
+
+/* ---- Ghost Button ---- */
+.btn-ghost {
+  background: transparent;
+  color: var(--color-gold);
+  border: none;
+  padding: 12px 16px;
+}
+
+.btn-ghost:hover {
+  text-decoration: underline;
+}
+
+/* ---- Ghost (Light) Button ---- */
+.btn-ghost-light {
+  background: transparent;
+  color: var(--color-cream);
+  border: 1.5px solid rgba(245, 241, 232, 0.4);
+}
+
+.btn-ghost-light:hover {
+  background: rgba(245, 241, 232, 0.1);
+  border-color: var(--color-cream);
+}
+
+/* ---- Danger Button ---- */
+.btn-danger {
+  background: var(--color-error);
+  color: var(--color-cream);
+}
+
+.btn-danger:hover {
+  background: #a8413a;
+  transform: translateY(-1px);
+}
+
+/* ---- Icon Button ---- */
+.btn-icon {
+  padding: 10px;
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--color-sage);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--transition-base), background var(--transition-base);
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.btn-icon:hover {
+  color: var(--color-gold);
+  background: rgba(201, 169, 97, 0.08);
+}
+
+/* ---- Button Sizes ---- */
+.btn-sm {
+  padding: 8px 16px;
+  font-size: 13px;
+}
+
+.btn-lg {
+  padding: 16px 32px;
+  font-size: 16px;
+  border-radius: var(--radius-lg);
+}
+
+.btn-xl {
+  padding: 18px 40px;
+  font-size: 17px;
+  border-radius: var(--radius-lg);
+}
+
+.btn-full {
+  width: 100%;
+}
+
+/* ---- Add to Cart Button ---- */
+.btn-add-cart {
+  background: var(--color-gold);
+  color: var(--color-charcoal);
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  transition: background var(--transition-base), transform var(--transition-fast);
+}
+
+.btn-add-cart:hover {
+  background: var(--color-sienna);
+  color: var(--color-cream);
+  transform: translateY(-1px);
+}
+
+/* ---- Loading State ---- */
+.btn-loading {
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.btn-loading::after {
+  content: '';
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top-color: currentColor;
+  border-radius: 50%;
+  animation: spinLoader 0.6s linear infinite;
+  margin-left: 8px;
+}

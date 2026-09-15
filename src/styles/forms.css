@@ -1,0 +1,275 @@
+/* ============================================
+   KENNY'S PORK ROLLS — FORMS
+   ============================================ */
+
+/* ---- Form Group ---- */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 640px) {
+  .form-row { grid-template-columns: 1fr; }
+}
+
+/* ---- Labels ---- */
+.form-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-sage);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* ---- Inputs ---- */
+.form-input,
+.form-select,
+.form-textarea {
+  background: var(--color-cream);
+  border: 1px solid var(--color-taupe);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  font-size: 14px;
+  color: var(--color-charcoal);
+  width: 100%;
+  transition:
+    border-color var(--transition-base),
+    box-shadow var(--transition-base),
+    background var(--transition-base);
+  outline: none;
+  appearance: none;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--color-sage);
+  opacity: 0.7;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: var(--color-gold);
+  box-shadow: var(--shadow-gold-glow);
+  background: #fff;
+}
+
+.form-input:disabled,
+.form-select:disabled,
+.form-textarea:disabled {
+  background: var(--color-cream-dark);
+  color: var(--color-sage);
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Error state */
+.form-input.error,
+.form-select.error,
+.form-textarea.error {
+  border-color: var(--color-error);
+  box-shadow: 0 0 0 3px rgba(193, 81, 74, 0.1);
+}
+
+.form-error {
+  font-size: 12px;
+  color: var(--color-error);
+  margin-top: 4px;
+}
+
+.form-hint {
+  font-size: 12px;
+  color: var(--color-sage);
+  margin-top: 4px;
+}
+
+/* ---- Textarea ---- */
+.form-textarea {
+  resize: vertical;
+  min-height: 100px;
+  line-height: 1.5;
+}
+
+/* ---- Select ---- */
+.form-select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B7A7E' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+/* ---- Checkbox ---- */
+.form-check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.form-check input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--color-gold);
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.form-check-label {
+  font-size: 14px;
+  color: var(--color-charcoal);
+  cursor: pointer;
+  user-select: none;
+}
+
+/* ---- Radio ---- */
+.form-radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-radio {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 12px 16px;
+  border: 1px solid var(--color-taupe);
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition-base), background var(--transition-base);
+}
+
+.form-radio:hover {
+  border-color: var(--color-gold);
+  background: var(--color-gold-pale);
+}
+
+.form-radio input[type="radio"] {
+  accent-color: var(--color-gold);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.form-radio.selected {
+  border-color: var(--color-gold);
+  background: var(--color-gold-pale);
+  border-width: 2px;
+}
+
+/* ---- Input with icon ---- */
+.input-wrapper {
+  position: relative;
+}
+
+.input-icon-left {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-sage);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.input-icon-left + .form-input {
+  padding-left: 44px;
+}
+
+.input-icon-right {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-sage);
+  cursor: pointer;
+  z-index: 1;
+  transition: color var(--transition-base);
+}
+
+.input-icon-right:hover {
+  color: var(--color-gold);
+}
+
+/* ---- Search bar ---- */
+.search-bar {
+  background: var(--color-cream);
+  border: 1.5px solid var(--color-taupe);
+  border-radius: var(--radius-pill);
+  padding: 10px 20px 10px 44px;
+  font-size: 14px;
+  color: var(--color-charcoal);
+  width: 100%;
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+  outline: none;
+}
+
+.search-bar::placeholder {
+  color: var(--color-sage);
+}
+
+.search-bar:focus {
+  border-color: var(--color-gold);
+  box-shadow: var(--shadow-gold-glow);
+}
+
+/* ---- Promo code ---- */
+.promo-row {
+  display: flex;
+  gap: 8px;
+}
+
+.promo-row .form-input {
+  flex: 1;
+}
+
+/* ---- Qty control ---- */
+.qty-control {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border: 1px solid var(--color-taupe);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--color-cream);
+}
+
+.qty-btn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-charcoal);
+  transition: background var(--transition-base), color var(--transition-base);
+}
+
+.qty-btn:hover {
+  background: var(--color-gold);
+  color: var(--color-charcoal);
+}
+
+.qty-value {
+  min-width: 36px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--color-charcoal);
+  border-left: 1px solid var(--color-taupe);
+  border-right: 1px solid var(--color-taupe);
+  line-height: 36px;
+}
