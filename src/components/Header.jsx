@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { ShoppingCart, Search, Bell, User, Menu, X } from 'lucide-react'
+import { ShoppingCart, Search, Bell, User, Menu, X, ExternalLink } from 'lucide-react'
 import { useCart } from '../context/CartContext'
 import { useApp } from '../context/AppContext'
 
@@ -82,7 +82,7 @@ export default function Header() {
             {/* Search bar — desktop */}
             <form
               onSubmit={handleSearch}
-              style={{ flex: 1, maxWidth: '480px', position: 'relative', display: 'flex' }}
+              style={{ flex: 1, maxWidth: '440px', position: 'relative', display: 'flex' }}
               className="header-search-desktop"
             >
               <div className="input-wrapper" style={{ width: '100%' }}>
@@ -100,7 +100,43 @@ export default function Header() {
             </form>
 
             {/* Right actions */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '4px', marginLeft: 'auto' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginLeft: 'auto' }}>
+
+              {/* Uber Eats CTA Button */}
+              <a
+                href="https://www.ubereats.com/au/store/kennys-pork-rolls/DgWmWqx1RcSOa2WLjReC3w?diningMode=DELIVERY"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="header-ubereats-desktop"
+                aria-label="Order on Uber Eats"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  padding: '7px 14px',
+                  backgroundColor: '#06C167',
+                  color: '#000000',
+                  fontFamily: 'Outfit, sans-serif',
+                  fontWeight: 700,
+                  fontSize: '12px',
+                  borderRadius: '99px',
+                  textDecoration: 'none',
+                  transition: 'all 0.2s ease',
+                  boxShadow: '0 2px 8px rgba(6, 193, 103, 0.3)',
+                  whiteSpace: 'nowrap',
+                }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.backgroundColor = '#05a357'
+                  e.currentTarget.style.transform = 'translateY(-1px)'
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.backgroundColor = '#06C167'
+                  e.currentTarget.style.transform = 'translateY(0)'
+                }}
+              >
+                <span><strong style={{ fontWeight: 800 }}>Uber</strong> Eats</span>
+                <ExternalLink size={12} style={{ opacity: 0.85 }} />
+              </a>
 
               {/* Mobile search toggle */}
               <button
@@ -261,6 +297,29 @@ export default function Header() {
                 {link.label}
               </Link>
             ))}
+
+            <a
+              href="https://www.ubereats.com/au/store/kennys-pork-rolls/DgWmWqx1RcSOa2WLjReC3w?diningMode=DELIVERY"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileMenuOpen(false)}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                marginTop: '12px',
+                padding: '12px 16px',
+                background: '#06C167',
+                color: '#000000',
+                borderRadius: 'var(--radius-md)',
+                fontWeight: 700,
+                fontSize: '14px',
+                textDecoration: 'none',
+              }}
+            >
+              <span>Order on <strong>Uber Eats</strong></span>
+              <ExternalLink size={16} />
+            </a>
           </nav>
         </>
       )}
@@ -269,6 +328,7 @@ export default function Header() {
         @media (max-width: 768px) {
           .header-search-desktop { display: none !important; }
           .header-hamburger { display: flex !important; }
+          .header-ubereats-desktop { display: none !important; }
         }
         @media (min-width: 769px) {
           .header-search-desktop { display: flex !important; }
