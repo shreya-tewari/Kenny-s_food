@@ -31,26 +31,37 @@ export default function Footer() {
             {/* Logo Badge */}
             <Link to="/" style={{ textDecoration: 'none', display: 'inline-block', marginBottom: '24px' }}>
               <div style={{
-                width: '90px',
-                height: '90px',
+                width: '100px',
+                height: '100px',
                 borderRadius: '50%',
                 border: '2px solid var(--color-gold)',
-                background: '#1A222A',
+                background: '#0F1419',
                 display: 'flex',
-                flexDirection: 'column',
                 alignItems: 'center',
                 justifyContent: 'center',
-                textAlign: 'center',
-                padding: '6px',
-                boxShadow: '0 4px 16px rgba(0,0,0,0.5)',
-              }}>
-                <span style={{ fontSize: '24px', lineHeight: 1 }}>🐷</span>
-                <span style={{ fontFamily: 'Outfit, sans-serif', fontSize: '9px', fontWeight: 900, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.04em', marginTop: '4px', lineHeight: 1.1 }}>
-                  KENNY'S<br />PORK ROLLS
-                </span>
-                <span style={{ fontSize: '7px', color: 'var(--color-sage)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-                  ASIAN STREET FOOD
-                </span>
+                boxShadow: '0 4px 20px rgba(0,0,0,0.6), 0 0 15px rgba(212, 175, 55, 0.15)',
+                overflow: 'hidden',
+                transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.transform = 'scale(1.05)'
+                e.currentTarget.style.boxShadow = '0 6px 24px rgba(0,0,0,0.7), 0 0 20px rgba(212, 175, 55, 0.3)'
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.transform = 'scale(1)'
+                e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.6), 0 0 15px rgba(212, 175, 55, 0.15)'
+              }}
+              >
+                <img
+                  src="/logo.png"
+                  alt="Kenny's Pork Rolls - Asian Street Food"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    display: 'block',
+                  }}
+                />
               </div>
             </Link>
 

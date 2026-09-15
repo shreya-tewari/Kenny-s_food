@@ -54,14 +54,28 @@ export default function Header() {
             {/* Logo */}
             <Link
               to="/"
-              style={{ textDecoration: 'none', flexShrink: 0 }}
+              style={{ textDecoration: 'none', flexShrink: 0, display: 'flex', alignItems: 'center', gap: '12px' }}
               aria-label="Kenny's Pork Rolls — Home"
             >
+              <img
+                src="/logo.png"
+                alt="Kenny's Pork Rolls Logo"
+                style={{
+                  width: '42px',
+                  height: '42px',
+                  borderRadius: '50%',
+                  objectFit: 'cover',
+                  border: '1.5px solid var(--color-gold)',
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.4)',
+                  display: 'block',
+                  flexShrink: 0,
+                }}
+              />
               <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.1 }}>
                 <span style={{
                   fontFamily: 'Outfit, sans-serif',
                   fontWeight: 900,
-                  fontSize: '22px',
+                  fontSize: '20px',
                   color: 'var(--color-cream)',
                   letterSpacing: '-0.02em',
                 }}>
